@@ -1,0 +1,33 @@
+{
+  "name": "home-work-structure",
+  "version": "0.0.1",
+  "description": "Make your code great again",
+  "scripts": {
+    "lint": "eslint ./"
+  },
+  "author": "Koterniak Serhii",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/eslint-parser": "^7.22.10",
+    "@babel/eslint-plugin": "^7.22.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
+    "eslint": "^8.47.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.js": [
+      "eslint ./ --max-warnings=0",
+      "git add"
+    ]
+  }
+}
