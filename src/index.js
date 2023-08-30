@@ -1,13 +1,13 @@
 //Task 1
 
-/*const userInput = prompt('Enter Number');
+const userInput = prompt('Enter Number');
 const parsedInput = parseInt(userInput);
 const result_a = parsedInput
 const result = (result_a % 3 === 0 && result_a % 5 === 0) ? 'Fizz Buzz' :
                (result_a % 5 === 0) ? "Buzz" :
                (result_a % 3 === 0) ? 'Fizz' : 'Oops it is not a nuber  or a number that is not divisible by 3 and 5';
 console.log(result);
-*/
+
 
 //Другий спосіб виконання першого завдання
 
@@ -54,7 +54,7 @@ console.log(result);
 
 
 //Task 3
-
+/*
 const userInput = prompt('Введіть ваш вік:');
 const parsedInput = parseInt(userInput);
 const num = parsedInput;
@@ -81,4 +81,4 @@ else {
    }     
 
 
-
+*/
