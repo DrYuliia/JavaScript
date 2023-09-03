@@ -64,4 +64,4 @@ for (let i = 0; i <= number; i++) {
         }
         counter += "\n";
     
-}console.log(counter);
+}alert(counter);
