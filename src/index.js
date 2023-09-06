@@ -1,67 +1,85 @@
 //Task 1
 /*
-const userInput = prompt('Enter Number');
-const number = parseInt(userInput);
-let counter = 0;
+const userInput = prompt('Enter string please:');
+const getString = userInput;
+const  newString = '' + getString;
 
-for (let n = 1; n <= number; n++) {
-    if (number % n === 0)
-    { 
-        counter++;
-       
-    } 
+function reverseString(str)
+{
+    let newString = '';
     
-} if (counter >= 3)
-        {
-            console.log(number+" Складене число");
-        }
-        else
-        {
-            console.log(number+" Просте число");
-} 
+  for (let i =str.length - 1; i >= 0; i--)
+    { 
+        newString = newString + str[i] ;
+    }
+    return newString;
+   
+}
+console.log(getString);
+console.log(reverseString(newString));
 */
 
 //Task 2
 /*
-const userInput = prompt('Введіть число');
-const number = parseInt(userInput);
-let isPerfect = false; 
+const userInput = prompt('Enter word:');
+const getWord = userInput;
+const  newWord = '' + getWord;
 
-for (let n = 1; n <= number; n++) {
-    let sum = 0;
-
-    for (let d = 1; d <= n / 2; d++) {
-        if (n % d === 0) {
-            sum += d;
-        }
+function isPalindrome(str)
+{
+    let newString = '';
+    
+  for (let i =str.length - 1; i >= 0; i--)
+    { 
+        newString = newString + str[i] ;
     }
-
-    if (sum === n) {
-        console.log(n + ' - це досконале число!');
-        isPerfect = true;
+    if (newWord === newString) {
+        console.log('Цей рядок - паліндром');
     }
+    else
+    {
+        console.log('Oops!  Цей рядок  не  паліндром');
+     }
+    return newString;
+  
 }
-
-if (!isPerfect) {
-    console.log('Opps!');
-}
-
+console.log(getWord +' - ' + isPalindrome(newWord));
 */
+ 
 //Task 3
 
-const userInput = prompt('Enter Number');
-const number = parseInt(userInput);
-let counter ="";
-for (let i = 0; i <= number; i++) {
-    for (let space = 1; space <= number - i; space++)
-    {
-        counter += " ";
-            
-    }
-    for (let num = 1; num <= 2 * i - 1; num++)
-        {
-            counter += "*";
-        }
-        counter += "\n";
+
+let userInput_a = prompt('Enter Number a');
+let userInput_b  = prompt('Enter Number b');
+let a = parseInt(userInput_a);
+let b = parseInt(userInput_b);
+
+
+
+if (!isNaN(a) && !isNaN(b))
+{
+    const gcd = findGCD(a, b);
     
-}alert(counter);
+    console.log('НСД: ' + gcd);
+}
+else
+{
+    console.log('Некоректні вхідні дані. Введіть числа.');
+}
+
+function findGCD(a, b)
+{
+   for (let i = 1; i <= a && i <= b; i++) {
+        if (a % i === 0 && b % i === 0) {
+           gcd = i;
+        }
+    }
+   
+    return gcd;
+
+}
+
+
+
+
+
