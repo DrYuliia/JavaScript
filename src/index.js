@@ -1,85 +1,44 @@
-//Task 1
-/*
-const userInput = prompt('Enter string please:');
-const getString = userInput;
-const  newString = '' + getString;
+//Task1
+/*const getString = prompt('Enter string please:');
+let newString = '';
 
-function reverseString(str)
-{
-    let newString = '';
-    
-  for (let i =str.length - 1; i >= 0; i--)
-    { 
-        newString = newString + str[i] ;
+function doubleLetter(str) {
+    for (let i = 0; i < str.length; i++) {
+        newString += str[i].repeat(2);
     }
     return newString;
-   
 }
-console.log(getString);
-console.log(reverseString(newString));
+
+const result = doubleLetter(getString);
+console.log(result);
 */
 
 //Task 2
 /*
-const userInput = prompt('Enter word:');
-const getWord = userInput;
-const  newWord = '' + getWord;
+const getString = prompt('Enter string please:');
+const userInput = prompt('Введіть число');
+const number = parseInt(userInput);
+const getSymbol = prompt('Enter symbol please:');
+const getTo = false;
 
-function isPalindrome(str)
-{
-    let newString = '';
-    
-  for (let i =str.length - 1; i >= 0; i--)
-    { 
-        newString = newString + str[i] ;
+
+function padString(str, length, symbol, toLeft) {
+    if (str.length >= length) {
+        return str; 
     }
-    if (newWord === newString) {
-        console.log('Цей рядок - паліндром');
+
+    const padding = symbol.repeat(length - str.length);
+
+    if (toLeft) {
+        return padding + str; 
+    } else {
+        return str + padding; 
     }
-    else
-    {
-        console.log('Oops!  Цей рядок  не  паліндром');
-     }
-    return newString;
-  
 }
-console.log(getWord +' - ' + isPalindrome(newWord));
+
+const result = padString(getString, number, getSymbol, getTo);
+console.log(result);
 */
- 
-//Task 3
-
-
-let userInput_a = prompt('Enter Number a');
-let userInput_b  = prompt('Enter Number b');
-let a = parseInt(userInput_a);
-let b = parseInt(userInput_b);
-
-
-
-if (!isNaN(a) && !isNaN(b))
-{
-    const gcd = findGCD(a, b);
-    
-    console.log('НСД: ' + gcd);
-}
-else
-{
-    console.log('Некоректні вхідні дані. Введіть числа.');
-}
-
-function findGCD(a, b)
-{
-   for (let i = 1; i <= a && i <= b; i++) {
-        if (a % i === 0 && b % i === 0) {
-           gcd = i;
-        }
-    }
-   
-    return gcd;
-
-}
-
-
 
 
 
