@@ -1,97 +1,80 @@
-
 //Task 1
 /*
-const originalArray = [1, 2, 3, 4, 5];
-let reversedArray = [];
-console.log(originalArray);
+const words = ["apple", "banaNA", "kiWi", "ORANGE"];
+const capitalizedWords = [];
 
-function reverseArray(originalArray)
+function capitalizeStrings(_arrayWords)
 {
-    for (i =originalArray.length - 1; i >= 0; i--)
-    {
-        reversedArray[reversedArray.length] = originalArray[i];    
-    }
-    return console.log(reversedArray);
-}
-reverseArray(originalArray);
+    console.log(_arrayWords);
 
+    for (let index = 0; index < _arrayWords.length; index++)
+        {
+            const element = _arrayWords[index].toLowerCase();
+            const firstLetter = element.charAt(0).toUpperCase();
+            const restOfWord = element.slice(1);
+            const capitalizedWord = firstLetter + restOfWord;
+            capitalizedWords.push(capitalizedWord);
+        }
+            console.log(capitalizedWords);
+            return capitalizedWords;
+ } 
+capitalizeStrings(words);
 */
 
 //Task 2
-
 /*
-const array1 = [1, 2, 3, 4, 5,2];
-const array2 = [3, 4, 5, 6, 7, 10];
-let uniqueValuesArray = [];
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+let commonElements =[];
 
 console.log('Array 1', array1);
 console.log('Array 2',array2);
 
-function uniqueValues(array1, array2) { 
-    for (let i = 0; i < array1.length; i++) {
-        let duplicate = false;
-        
-        for (let j = 0; j < uniqueValuesArray.length; j++) {
-            if (array1[i] === uniqueValuesArray[j]) {
-                duplicate = true;
-                break;
-            }
+function findCommonElements(array1, array2)
+{
+    for (let index = 0; index < array1.length; index++)
+        {
+         const element = array1[index];
+
+        if (array2.includes(element) && !commonElements.includes(element)) {
+            commonElements.push(element);
         }
-        
-        if (!duplicate) {
-            uniqueValuesArray[uniqueValuesArray.length] = array1[i]; 
-        }
-    }
-    for (let i = 0; i < array2.length; i++) {
-        let duplicate = false;
-        
-        for (let j = 0; j < uniqueValuesArray.length; j++) {
-            if (array2[i] === uniqueValuesArray[j]) {
-                duplicate = true;
-                break;
-            }
-        }
-        
-        if (!duplicate) {
-            uniqueValuesArray[uniqueValuesArray.length] = array2[i]; 
-        }
-    }
-    return console.log('Unique array',uniqueValuesArray);
+}
+    return commonElements;
 }
 
-uniqueValues(array1, array2);
+console.log(findCommonElements(array1, array2));
 */
 
 //Task 3
-let totalGrades = 0;
-let averageGrade = 0;
-const students = [
-    {
-        name: "Alice",
-        age: 20,
-        grade: 4.5
-    },
-    {
-        name: "Bob",
-        age: 21,
-        grade: 3.9
-    },
-    {
-        name: "Charlie",
-        age: 19,
-        grade: 4.8
-    }
-];
+const numbers = [1, 2, 3, 4, 5];
+ function analyzeArray(numbers)
+ {
+    let sum = 0;
+    let min = numbers[0];
+    let max = numbers[0];
+     
+     for (let i = 0; i < numbers.length; i++)
+     {
+         sum += numbers[i];
+        
+         if (numbers[i] < min)
+         {
+            min = numbers[i];
+        }
+         if (numbers[i] > max)
+         {
+            max = numbers[i];
+        }
+     } 
+   let  average = sum / (numbers.length - 1);
+           average = parseInt(average);
 
-function calculateAverageGrade(students)
-{ 
-    for (let i = 0; i < students.length; i++)
-    {
-        
-            totalGrades += students[i].grade;
-        
-    }
-    averageGrade = totalGrades / students.length;
-    return console.log( averageGrade.toFixed(1));
+    return {
+             sum: sum,
+             average: average,
+             min: min,
+             max: max
+           };
 }
-calculateAverageGrade(students);
+console.log(analyzeArray(numbers)); 
