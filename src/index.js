@@ -9,7 +9,7 @@ const isSimple = function (number)
       counter++;
      }
   }
-  return counter <= 2; 
+  return counter === 2; 
 };
 const arraySimpleNumbers = arrayNumbers.filter((number) => isSimple(number));
 console.log(arraySimpleNumbers);
