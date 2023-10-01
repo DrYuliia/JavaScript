@@ -1,16 +1,19 @@
-//Task1
-function logArguments(fn) {
-  return function (...args) {
-    console.log("Arguments:", args);
-    return fn(...args);
+//Task 1
+
+function summarize(num)
+{
+  if (num === undefined)
+  {
+    num = 1;
   }
+    return function sum(arg)
+    {
+      return num + arg;
+    };
 }
 
-function add(a, b) {
-  return a + b;
-}
+const num = summarize(5);
+console.log(num(3)); 
 
-const loggedAdd = logArguments(add);
-
-const result = loggedAdd(1, 2);
-
+const number = summarize();
+console.log(number(6)); 
