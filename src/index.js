@@ -1,23 +1,13 @@
-function isPalindrome(n) {
-  return n.toString() === n.toString().split('').reverse().join('');
-}
-
-function reverseAndAdd(initialNum) {
-  let steps = 0;
-  let currentNumber = initialNum;
-
-  while (steps < 1000) { 
-    if (isPalindrome(currentNumber)) {
-      return { result: currentNumber, steps };
-    } else {
-      currentNumber += parseInt(currentNumber.toString().split('').reverse().join(''));
-      steps++;
-    }
+//Task 1
+function randomDelayPrint(message, index = 0) {
+  if (index < message.length) {
+    const letter = message[index];
+    const timer = Math.random() * 1000; // Випадкова затримка від 0 до 1 секунди
+    setTimeout(function() {
+      console.log(letter);
+      randomDelayPrint(message, index + 1); // Рекурсивний виклик для наступної літери
+    }, timer);
   }
-
-  return { result: null, steps };
 }
 
-
-const result = reverseAndAdd(96)
-console.log(result);
+randomDelayPrint("Hunter");
